@@ -26,7 +26,6 @@ class Agent():
 
     def __init__(self, state_size, action_size, random_seed):
         """Initialize an Agent object.
-
         Params
         ======
             state_size (int): dimension of each state
@@ -72,7 +71,7 @@ class Agent():
     def reset(self):
         self.noise.reset()
 
-    def start_learn(self):
+    def speedup_learn(self):
         if len(self.memory) > BATCH_SIZE:
             experiences = self.memory.sample()
             self.learn(experiences, GAMMA)
